@@ -1,7 +1,7 @@
-# cybership
+# Cybership
 Cybersecurity training based on Battleship game model
 
-# todo
+### todo
 - Paramertize initial game board load
   - Game name
   - Background url
