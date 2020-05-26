@@ -1,0 +1,18 @@
+{
+  "name": "Cybership",
+  "version": "1.0.0",
+  "description": "Cybersecurity training platform based on the battleship game paradigm",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ken Graf",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}

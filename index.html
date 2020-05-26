@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cyberships</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("./Picuda(SS-382).jpg");
+  background-color: #cccccc;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cell-text {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  background-color: transparent;
+  width: 90px;
+  border: none;
+}
+
+.teams {
+  align-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.footer-link {
+  align-content: center;
+  color: white;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.modal-open {
+  overflow:hidden;
+  overflow-y:scroll;
+  padding-right:0 !important;
+}
+
+tr td {
+  padding: 0 !important;
+  margin: 0px  !important;
+}
+
+</style>
+
+
+
+</head>
+
+
+<body>
+
+<!-- Model dialog to ask questions -->
+<div class="modal fade" id="modalQuestionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 id="modalTitle" class="modal-title w-100 font-weight-bold"></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm" class="font-weight-bold">Answer</label>
+          <input type="text" id="defaultForm" class="form-control validate">
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button onclick="myAnswer()" class="btn btn-indigo font-weight-bold close" data-dismiss="modal">Check Answer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1 id="gameTitle" class="text-center" style="font-size:50px">Cyberships - Family Riddles</h1>
+  
+<div class="container">
+  <table class="table table-borderless">
+    <tbody>
+      <tr>
+        <td id="a0" class="cell-text align-middle"><button id="A0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a1" class="cell-text align-middle"><button id="A1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a2" class="cell-text align-middle"><button id="A2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a3" class="cell-text align-middle"><button id="A3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a4" class="cell-text align-middle"><button id="A4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a5" class="cell-text align-middle"><button id="A5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a6" class="cell-text align-middle"><button id="A6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a7" class="cell-text align-middle"><button id="A7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a8" class="cell-text align-middle"><button id="A8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="a9" class="cell-text align-middle"><button id="A9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+       </tr>
+      <tr>
+        <td id="b0" class="cell-text align-middle"><button id="B0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b1" class="cell-text align-middle"><button id="B1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b2" class="cell-text align-middle"><button id="B2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b3" class="cell-text align-middle"><button id="B3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b4" class="cell-text align-middle"><button id="B4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b5" class="cell-text align-middle"><button id="B5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b6" class="cell-text align-middle"><button id="B6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b7" class="cell-text align-middle"><button id="B7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b8" class="cell-text align-middle"><button id="B8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="b9" class="cell-text align-middle"><button id="B9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+     </tr>
+      <tr>
+        <td id="c0" class="cell-text align-middle"><button id="C0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c1" class="cell-text align-middle"><button id="C1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c2" class="cell-text align-middle"><button id="C2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c3" class="cell-text align-middle"><button id="C3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c4" class="cell-text align-middle"><button id="C4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c5" class="cell-text align-middle"><button id="C5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c6" class="cell-text align-middle"><button id="C6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c7" class="cell-text align-middle"><button id="C7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c8" class="cell-text align-middle"><button id="C8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="c9" class="cell-text align-middle"><button id="C9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+      <tr>
+        <td id="d0" class="cell-text align-middle"><button id="D0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d1" class="cell-text align-middle"><button id="D1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d2" class="cell-text align-middle"><button id="D2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d3" class="cell-text align-middle"><button id="D3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d4" class="cell-text align-middle"><button id="D4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d5" class="cell-text align-middle"><button id="D5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d6" class="cell-text align-middle"><button id="D6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d7" class="cell-text align-middle"><button id="D7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d8" class="cell-text align-middle"><button id="D8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="d9" class="cell-text align-middle"><button id="D9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+      <tr>
+        <td id="e0" class="cell-text align-middle"><button id="E0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e1" class="cell-text align-middle"><button id="E1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e2" class="cell-text align-middle"><button id="E2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e3" class="cell-text align-middle"><button id="E3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e4" class="cell-text align-middle"><button id="E4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e5" class="cell-text align-middle"><button id="E5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e6" class="cell-text align-middle"><button id="E6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e7" class="cell-text align-middle"><button id="E7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e8" class="cell-text align-middle"><button id="E8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="e9" class="cell-text align-middle"><button id="E9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+      <tr>
+        <td id="f0" class="cell-text align-middle"><button id="F0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f1" class="cell-text align-middle"><button id="F1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f2" class="cell-text align-middle"><button id="F2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f3" class="cell-text align-middle"><button id="F3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f4" class="cell-text align-middle"><button id="F4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f5" class="cell-text align-middle"><button id="F5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f6" class="cell-text align-middle"><button id="F6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f7" class="cell-text align-middle"><button id="F7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f8" class="cell-text align-middle"><button id="F8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="f9" class="cell-text align-middle"><button id="F9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+      <tr>
+        <td id="g0" class="cell-text align-middle"><button id="G0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g1" class="cell-text align-middle"><button id="G1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g2" class="cell-text align-middle"><button id="G2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g3" class="cell-text align-middle"><button id="G3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g4" class="cell-text align-middle"><button id="G4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g5" class="cell-text align-middle"><button id="G5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g6" class="cell-text align-middle"><button id="G6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g7" class="cell-text align-middle"><button id="G7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g8" class="cell-text align-middle"><button id="G8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="g9" class="cell-text align-middle"><button id="G9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+      <tr>
+        <td id="h0" class="cell-text align-middle"><button id="H0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h1" class="cell-text align-middle"><button id="H1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h2" class="cell-text align-middle"><button id="H2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h3" class="cell-text align-middle"><button id="H3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h4" class="cell-text align-middle"><button id="H4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h5" class="cell-text align-middle"><button id="H5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h6" class="cell-text align-middle"><button id="H6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h7" class="cell-text align-middle"><button id="H7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h8" class="cell-text align-middle"><button id="H8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="h9" class="cell-text align-middle"><button id="H9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+      <tr>
+        <td id="i0" class="cell-text align-middle"><button id="I0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i1" class="cell-text align-middle"><button id="I1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i2" class="cell-text align-middle"><button id="I2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i3" class="cell-text align-middle"><button id="I3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i4" class="cell-text align-middle"><button id="I4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i5" class="cell-text align-middle"><button id="I5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i6" class="cell-text align-middle"><button id="I6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i7" class="cell-text align-middle"><button id="I7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i8" class="cell-text align-middle"><button id="I8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="i9" class="cell-text align-middle"><button id="I9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+      <tr>
+        <td id="j0" class="cell-text align-middle"><button id="J0" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j1" class="cell-text align-middle"><button id="J1" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j2" class="cell-text align-middle"><button id="J2" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j3" class="cell-text align-middle"><button id="J3" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j4" class="cell-text align-middle"><button id="J4" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j5" class="cell-text align-middle"><button id="J5" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j6" class="cell-text align-middle"><button id="J6" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j7" class="cell-text align-middle"><button id="J7" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j8" class="cell-text align-middle"><button id="J8" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+        <td id="j9" class="cell-text align-middle"><button id="J9" class="cell-text" data-toggle="modal" data-target="#modalQuestionForm"></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div id='space' class="col-md-3"></div>
+    <div id='team1' class="teams col-md-2 bg-light text-dark">
+      Team 1: 100
+    </div>
+   <div id='space' class="col-md-2"></div>
+   <div id='team2' class="teams col-md-2 bg-light text-dark">
+      team2: 1999
+    </div>
+  </div>
+</div>
+
+<div id='footer' class="footer text-center">
+<em>
+<a href="https://en.wikipedia.org/wiki/USS_Picuda_(SS-382)" class="footer-link"><em>Find out more about the submarine SS Picuda</em></a>
+</em>
+</div>
+</body>
+
+<script>
+function loadJSON(url, callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', url, true);
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+
+var gameData = ''
+
+loadJSON('questions/riddles.json',function(response) {
+  // Parse JSON string into object
+    gameData = JSON.parse(response);
+    for (i in gameData) {
+      obj = gameData[i];
+      const button = document.querySelector('#' + obj.name);
+      button.dataset.question = obj.question;
+      button.dataset.answer = obj.answer;
+      button.dataset.location = obj.name;
+      button.innerHTML = obj.name;
+
+}
+
+});
+
+</script>
+
+
+<script>
+function myAnswer() {
+  var cell = document.getElementById('modalTitle').textContent;
+  var node = document.getElementById('defaultForm');
+  var answer = node.value;
+
+    for (i in gameData) {
+      obj = gameData[i];
+      if (obj.name === cell) {
+        if (obj.answer.indexOf(answer) == -1) {
+          // wrong answer no action
+          return;
+        }
+        // delete button (need hitting and sinking)
+        const button = document.querySelector('#' + obj.name);
+        button.style.display = 'none';
+        var state = Math.floor((Math.random() * 10) + 1);
+        if (state > 5) {
+          const cell = document.querySelector('#' + obj.name.toLowerCase());
+          cell.style.backgroundColor = "red";
+        }
+      }
+    }
+}
+
+$('#modalQuestionForm').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget)
+  var question = button.data('question')
+  var location = button.data('location')
+  var modal = $(this)
+  modal.find('.modal-title').text(location)
+  modal.find('.modal-body label').text(question)
+  modal.find('.modal-body input').val('')
+})
+
+</script>
+
+
+</html>
